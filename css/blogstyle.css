@@ -1,0 +1,100 @@
+@import url("style.css");
+@import url("linkstyle.css");
+@import url("navstyle.css");
+
+.nested-pic1 {
+    background-image: url("../img/you.JPG");
+}
+
+@media (min-width: 640px) and (max-width: 900px){
+    .container {
+    grid-gap: 10px;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content min-content auto auto min-content;
+    grid-template-areas: 
+    "had1   had1"
+    "nav1   con1"
+    "nav1   con2"
+    "nav1   sec1"
+    "fot1   fot1";
+    }
+
+/* NESTED GRID IN MEDIA QUERY ****/
+    .content2{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content min-content;
+        grid-gap: 10px;
+        grid-template-areas: 
+        "con2";
+    }
+    .nested-pic1 {
+        height: 30vh;
+    }
+    .nested-pic2 {
+        display: grid;
+        height: 30px;
+        background-position: center;
+        border-radius: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .navbar-1 ul{
+        display: grid;
+        grid-template-columns: min-content;
+        grid-template-rows: auto;
+        grid-gap: 5px;
+        padding: 0;
+        list-style: none;
+    }
+    .navbar-1 a {
+        display: block;
+        background: white;
+        text-decoration: none;
+        padding: 0.3rem;
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+        font-size: 0.8rem;            
+    }
+    .navbar-1 a:hover {
+        background: black;
+        color: white;
+    }
+}
+
+
+@media (min-width: 901px){
+    .section1 {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .status{
+        padding: 20px;
+        /* margin: 20px; */
+    }
+
+    .navbar-1 ul{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+        padding: 0;
+        list-style: none;
+    }
+    .navbar-1 a {
+        display: block;
+        background: white;
+        text-decoration: none;
+        padding: 0.8rem;
+        text-align: center;
+        color: black;
+        text-transform: uppercase;
+        font-size: 1rem;
+        border-radius: 5px;
+    }
+    .navbar-1 a:hover {
+        background: black;
+        color: white;
+    }
+
+}
