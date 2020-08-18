@@ -1,0 +1,25 @@
+@import url('style.css');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.btnlink1 {
+  display: grid;
+  background: var(--primary);
+  color: var(--dark);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: var(--shaddow);
+}
+
+.btnlink1:hover {
+  background: black;
+  color: white;
+  border: none;
+}

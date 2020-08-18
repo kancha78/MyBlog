@@ -1,0 +1,173 @@
+@import url('linkstyle.css');
+@import url('navstyle.css');
+
+/* CSS variables */
+:root {
+  --primary: #ddd;
+  --dark: #333;
+  --light: #fff;
+  --shaddow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --div-padding: 20px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--dark);
+}
+
+body {
+  font-size: 16px;
+  background: #ccc;
+  line-height: 1.4;
+  padding: 15px;
+  margin: 10px;
+}
+
+/* 
+.box {
+  border: 2px solid red;
+  margin: 10px;
+  padding: 15px;
+  font-size: 16px;
+} */
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
+  /* grid-template-rows: min-content min-content auto auto auto min-content; */
+  grid-auto-rows: auto;
+  grid-gap: 10px;
+  grid-template-areas:
+    'had1'
+    'nav1'
+    'con1'
+    'con2'
+    'sec1'
+    'fot1';
+}
+
+.header1 {
+  grid-area: had1;
+}
+.navbar1 {
+  grid-area: nav1;
+}
+.content1 {
+  grid-area: con1;
+}
+.content2 {
+  grid-area: con2;
+}
+.section1 {
+  grid-area: sec1;
+}
+.footer1 {
+  grid-area: fot1;
+  display: grid;
+  background-color: rgb(75, 74, 74);
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* WELCOME NOTE DESIGN  */
+.w-note {
+  font-size: 18px;
+}
+/* GOAL DESIGN  */
+.g-note {
+  font-size: 18px;
+}
+h2 {
+  font-size: 30px;
+}
+/* NESTED GRID */
+.content2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content min-content;
+  grid-gap: 10px;
+}
+.nested-pic1 {
+  display: grid;
+  background-image: url('../img/me.jpg');
+  min-height: 300px;
+  height: auto;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.pic-note p {
+  font-size: 25px;
+}
+
+@media (min-width: 640px) and (max-width: 900px) {
+  .container {
+    grid-gap: 10px;
+    /* background-color: darkolivegreen; */
+    grid-template-columns: 1fr 400px;
+    /* grid-template-rows: min-content min-content auto auto min-content; */
+    grid-auto-rows: 1fr 1fr 3fr 3fr 0.4fr;
+    grid-template-areas:
+      'had1   had1'
+      'nav1   nav1'
+      'con1   con2'
+      'sec1   sec1'
+      'fot1   fot1';
+  }
+  h1 {
+    font-size: 40px;
+  }
+
+  .navbar-1 ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: small;
+  }
+
+  .navbar-1 a {
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+}
+
+@media (min-width: 901px) {
+  .container {
+    grid-gap: 20px;
+    grid-template-columns: 1fr 550px;
+    /* grid-template-rows: min-content min-content auto auto min-content; */
+    grid-auto-rows: 1fr 1fr 3fr 3fr 0.4fr;
+    grid-template-areas:
+      'had1   had1'
+      'nav1   nav1'
+      'con1   con2'
+      'sec1   sec1'
+      'fot1   fot1';
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .navbar-1 ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 0;
+    list-style: none;
+  }
+}
